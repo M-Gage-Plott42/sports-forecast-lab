@@ -1,0 +1,30 @@
+{
+  "mode": "mlb_adapter_schedule_fixture",
+  "research_only": "yes",
+  "no_bet_instruction": "yes",
+  "source_verified": "fixture_from_official_surface_review",
+  "games": [
+    {
+      "game_pk": 776001,
+      "season": 2026,
+      "game_type": "R",
+      "game_date": "2026-06-15",
+      "scheduled_start": "2026-06-15T18:40:00-04:00",
+      "status": "scheduled",
+      "venue": "Citizens Bank Park",
+      "neutral_site": false,
+      "doubleheader": "N",
+      "away_team": {
+        "team_id": 146,
+        "team_name": "Miami Marlins",
+        "team_abbreviation": "MIA"
+      },
+      "home_team": {
+        "team_id": 143,
+        "team_name": "Philadelphia Phillies",
+        "team_abbreviation": "PHI"
+      },
+      "source_id": "mlb_schedule"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+source_id,source_title,source_url,source_tier,source_access_status,retrieved_at,source_timestamp,timezone,adapter_use,review_note
+mlb_schedule,MLB Schedule,https://www.mlb.com/schedule,official,accessible,2026-06-15T00:00:00-04:00,2026-06-15T00:00:00-04:00,America/New_York,schedule,Official public schedule surface for fixture-first adapter design.
+mlb_probable_pitchers,MLB Probable Pitchers,https://www.mlb.com/probable-pitchers,official,accessible,2026-06-15T00:00:00-04:00,2026-06-15T00:00:00-04:00,America/New_York,probable_pitchers,Official public probable-pitcher surface; fixture only until a fetcher is reviewed.
+baseball_savant_csv_docs,Baseball Savant Statcast CSV Documentation,https://baseballsavant.mlb.com/csv-docs,official,accessible,2026-06-15T00:00:00-04:00,2026-06-15T00:00:00-04:00,America/New_York,statcast_schema,Official public Statcast CSV field documentation for schema planning.

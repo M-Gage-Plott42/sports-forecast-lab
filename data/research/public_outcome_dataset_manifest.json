@@ -1,0 +1,14 @@
+{
+  "dataset": "public_outcome_dataset",
+  "date_generated_from_private_repo_manifest": "2026-06-14T00:19:39-04:00",
+  "date_max": "2026-06-13",
+  "date_min": "2024-05-03",
+  "full_dataset_git_tracking": "ignored_untracked_artifact",
+  "full_dataset_sha256": "9508bc8fe28a9884384ca2397d5dd44fe5af369a7e6dddb189c32dbe55c8dee3",
+  "mode": "public_outcome_dataset_manifest",
+  "row_count": 961308,
+  "sample_rows": 1000,
+  "source_note": "Season-end public outcome refresh from official NBA game and box-score sources with AP corroboration. Research-only public data; no private records or transaction labels.",
+  "source_verified": "yes",
+  "unique_player_count": 133
+}

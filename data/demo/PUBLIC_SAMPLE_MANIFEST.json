@@ -1,0 +1,49 @@
+{
+  "created_at_utc": "2026-06-15T07:44:43.271543+00:00",
+  "files": [
+    {
+      "data_origin": "public_source_manifest",
+      "path": "data/research/public_outcome_dataset_manifest.json",
+      "review_note": "Generated public-safe manifest derived from the source public outcome manifest.",
+      "sha256": "97a515257908f78ae55428f765ba819b23bd2b5aa821442c92973183bf15c598",
+      "size_bytes": 668,
+      "source_access_status": "manifest_recorded"
+    },
+    {
+      "data_origin": "public_source_sample",
+      "path": "data/research/public_outcome_dataset_sample.csv",
+      "review_note": "Generated public-safe sample with private/internal columns removed.",
+      "sha256": "93929269e64dec8c177502757b68a468d6cc5d38dfbdd9f2d79386ece5d70f42",
+      "size_bytes": 245725,
+      "source_access_status": "manifest_recorded"
+    },
+    {
+      "data_origin": "synthetic_demo",
+      "path": "data/demo/synthetic_private_style_rows.csv",
+      "review_note": "Generated schema demo rows; no private account or transaction data.",
+      "sha256": "bc11fb62c445248cdd60ee6fc2b4df6d0bb540379df73b0123c382a86a9d9dfd",
+      "size_bytes": 664,
+      "source_access_status": "synthetic"
+    },
+    {
+      "data_origin": "public_schema",
+      "path": "data/schemas/public_research_schema.json",
+      "review_note": "Generated schema for public export examples.",
+      "sha256": "e77e1b945ad88d29272fa884a27d1d3103144220de60c6b3d74f99c9ca6418fa",
+      "size_bytes": 1306,
+      "source_access_status": "synthetic"
+    },
+    {
+      "data_origin": "official_source_registry_template",
+      "path": "data/research/mlb_source_registry_template.csv",
+      "review_note": "MLB adapter source registry template for fixture-first scaffolding.",
+      "sha256": "062e20d834c7ec1b3fec49161081df1cd4f8e6b27cfc9655df93b6423fbfed39",
+      "size_bytes": 906,
+      "source_access_status": "accessible_at_review_time"
+    }
+  ],
+  "mode": "public_sample_manifest",
+  "no_bet_instruction": "yes",
+  "private_data_included": "no",
+  "research_only": "yes"
+}

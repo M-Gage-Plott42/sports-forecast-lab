@@ -1,0 +1,36 @@
+{
+  "mode": "mlb_adapter_boxscore_fixture",
+  "research_only": "yes",
+  "no_bet_instruction": "yes",
+  "source_verified": "synthetic_shape_fixture",
+  "game_pk": 776001,
+  "player_stats": [
+    {
+      "player_id": 999001,
+      "player_name": "Fixture Batter",
+      "team_id": 143,
+      "team_abbreviation": "PHI",
+      "stat_group": "batting",
+      "stats": {
+        "at_bats": 4,
+        "hits": 2,
+        "runs": 1,
+        "rbi": 1
+      },
+      "source_id": "mlb_schedule"
+    },
+    {
+      "player_id": 999002,
+      "player_name": "Fixture Pitcher",
+      "team_id": 146,
+      "team_abbreviation": "MIA",
+      "stat_group": "pitching",
+      "stats": {
+        "innings_pitched": "5.0",
+        "strikeouts": 6,
+        "earned_runs": 2
+      },
+      "source_id": "mlb_schedule"
+    }
+  ]
+}

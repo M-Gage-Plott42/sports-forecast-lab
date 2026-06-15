@@ -1,0 +1,63 @@
+{
+  "mode": "public_research_schema",
+  "no_bet_instruction": "yes",
+  "research_only": "yes",
+  "tables": {
+    "mlb_source_registry_template.csv": [
+      "source_id",
+      "source_url",
+      "source_title",
+      "source_tier",
+      "source_access_status",
+      "retrieved_at",
+      "source_published_at",
+      "supports_schedule",
+      "supports_box_score",
+      "supports_probable_pitchers",
+      "review_note"
+    ],
+    "public_outcome_dataset_sample.csv": [
+      "sample_id",
+      "training_scope",
+      "research_only",
+      "no_bet_instruction",
+      "label_source",
+      "line_source",
+      "season",
+      "season_type",
+      "player_id",
+      "player_name",
+      "team",
+      "opponent",
+      "game_id",
+      "game_date",
+      "home_away",
+      "stat",
+      "side",
+      "line",
+      "actual_value",
+      "target_hit",
+      "source_verified",
+      "created_at"
+    ],
+    "synthetic_private_style_rows.csv": [
+      "record_id",
+      "training_scope",
+      "research_only",
+      "no_bet_instruction",
+      "data_origin",
+      "event_id",
+      "participant_id",
+      "team",
+      "opponent",
+      "stat",
+      "line",
+      "actual_value",
+      "target_hit",
+      "label_source",
+      "line_source",
+      "source_verified",
+      "notes"
+    ]
+  }
+}

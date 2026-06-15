@@ -1,0 +1,239 @@
+{
+  "allowlist_policy_version": "public_repo_export_v2",
+  "copied_file_count": 16,
+  "created_at_utc": "2026-06-15T07:44:43.271793+00:00",
+  "data_slates_included": "no",
+  "excluded_classes": [
+    "private_ledgers",
+    "private_slates",
+    "raw_screenshots",
+    "exact_private_tickets",
+    "exact_stakes_payouts",
+    "platform_account_details",
+    "friend_user_identifiers",
+    "private_history",
+    "generated_bulk",
+    "caches",
+    "model_binaries",
+    "local_artifacts",
+    "secrets"
+  ],
+  "file_count": 28,
+  "files": [
+    {
+      "generated": false,
+      "path": "data/research/mlb_source_registry_template.csv",
+      "sha256": "062e20d834c7ec1b3fec49161081df1cd4f8e6b27cfc9655df93b6423fbfed39",
+      "size_bytes": 906,
+      "source_path": "data/research/mlb_source_registry_template.csv"
+    },
+    {
+      "generated": false,
+      "path": "docs/cross_sport_framework_architecture.md",
+      "sha256": "db04a91fd79855a121188d50dc0038f3f0176bb8d89a70d9235f39b475d90611",
+      "size_bytes": 6076,
+      "source_path": "docs/cross_sport_framework_architecture.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/dataset_cards/README.md",
+      "sha256": "2108e765b71dd9f7ad201c7bc2503be3bf88ca1930a03a645a1ebf2feb0f7e40",
+      "size_bytes": 459,
+      "source_path": "docs/dataset_cards/README.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/dataset_cards/public_outcome_dataset_example.md",
+      "sha256": "4757afa388614ac8166dd10cee185b372bd175fac6e3e2be1709e3fa2f19602e",
+      "size_bytes": 2183,
+      "source_path": "docs/dataset_cards/public_outcome_dataset_example.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/model_cards/README.md",
+      "sha256": "9cd709448acc564af98c5830b4a03ce8b8dd9a01203e49c410c79aa94ce6d05a",
+      "size_bytes": 884,
+      "source_path": "docs/model_cards/README.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/model_cards/public_outcome_baseline_example.md",
+      "sha256": "5eb6d86bc03fa928c80510a98269c98997bb9ab3ca90bee44fde8844f109075d",
+      "size_bytes": 2279,
+      "source_path": "docs/model_cards/public_outcome_baseline_example.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/model_cards/template.md",
+      "sha256": "147ce0c9e89a100787b90271096da6a365e64c5cd946ece66f667ebf6ffef599",
+      "size_bytes": 1504,
+      "source_path": "docs/model_cards/template.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/public_release_checklist.md",
+      "sha256": "d391ae21c7b873cfe67f7bf5b65feef10188ce8ac4463dc2a90ebefb170aec9a",
+      "size_bytes": 3715,
+      "source_path": "docs/public_release_checklist.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/public_repo_export_spec.md",
+      "sha256": "98699b0c408cd2ddccf637b751f53e1c649a721051c017b305af85429d4f64ec",
+      "size_bytes": 9470,
+      "source_path": "docs/public_repo_export_spec.md"
+    },
+    {
+      "generated": false,
+      "path": "docs/sport_adapters/mlb_adapter_skeleton.md",
+      "sha256": "b029c779e0c72abaee490eb6ae8e38bd2aa6ec76b337a461ea8dcf7edcd2739b",
+      "size_bytes": 3227,
+      "source_path": "docs/sport_adapters/mlb_adapter_skeleton.md"
+    },
+    {
+      "generated": false,
+      "path": "scripts/fixtures/mlb_adapter/official_schedule_fixture.json",
+      "sha256": "0a38803df6099cb2bed57e82bb3520e6db1ddaf426eaeb3ba21e0c6fd70bfc37",
+      "size_bytes": 769,
+      "source_path": "scripts/fixtures/mlb_adapter/official_schedule_fixture.json"
+    },
+    {
+      "generated": false,
+      "path": "scripts/fixtures/mlb_adapter/public_boxscore_fixture.json",
+      "sha256": "0f661de8e61954b2984f9523b02b6f6871a59b51c2633488298447dfaa8c4c29",
+      "size_bytes": 810,
+      "source_path": "scripts/fixtures/mlb_adapter/public_boxscore_fixture.json"
+    },
+    {
+      "generated": false,
+      "path": "scripts/fixtures/mlb_adapter/source_registry_fixture.csv",
+      "sha256": "48f57ff2a81f318f83e600fa204c3d244bf3888f802a16c2531bbc8d26c31855",
+      "size_bytes": 594,
+      "source_path": "scripts/fixtures/mlb_adapter/source_registry_fixture.csv"
+    },
+    {
+      "generated": false,
+      "path": "scripts/validate_mlb_adapter_skeleton.py",
+      "sha256": "7709c1ce4099446e02d5260158307d2f10f15abcf99f715e84bd28a7b5b83928",
+      "size_bytes": 8050,
+      "source_path": "scripts/validate_mlb_adapter_skeleton.py"
+    },
+    {
+      "generated": false,
+      "path": "scripts/validate_public_repo_export.py",
+      "sha256": "056787b64059029956e61e6019af2e59b34cee1349d683896ec4ac00528947f6",
+      "size_bytes": 7758,
+      "source_path": "scripts/validate_public_repo_export.py"
+    },
+    {
+      "generated": false,
+      "path": "scripts/validate_text_line_endings.py",
+      "sha256": "ff243bb3b7d62e7cb8d935d0da78ed8f6760bb14d86bfc2286c319fa4890080a",
+      "size_bytes": 2069,
+      "source_path": "scripts/validate_text_line_endings.py"
+    },
+    {
+      "generated": true,
+      "path": "README.md",
+      "sha256": "2358b032ff3dffd5616762b7ad54120d1d955825dbd515147200d85ad136b137",
+      "size_bytes": 1784,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "STATUS_PUBLIC.md",
+      "sha256": "6975f76da183e2a51a49ba770c18ea50d02176a12aa70cb9360f26dfbd836614",
+      "size_bytes": 898,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "RESEARCH_BOUNDARY.md",
+      "sha256": "e1a14ddf05d4cdfdc5f23d8cec34bfa9fa5935378a1c4ec4c8081693b80f3935",
+      "size_bytes": 939,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "SECURITY.md",
+      "sha256": "69a14f88a50919c2bc1b37a8df6122a68c73e81d223a0b4caf72480c1d325a5c",
+      "size_bytes": 951,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "CONTRIBUTING.md",
+      "sha256": "472b0b585bceec45007cdeefc24d7b3f1b1b6cfcb74acc893a6a50ef7ce1817e",
+      "size_bytes": 655,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "LICENSE",
+      "sha256": "b662d0506c9120f89a5656a07d264823aef7f4eeaa8d6351d041696394d40bdd",
+      "size_bytes": 10263,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "data/demo/synthetic_private_style_rows.csv",
+      "sha256": "bc11fb62c445248cdd60ee6fc2b4df6d0bb540379df73b0123c382a86a9d9dfd",
+      "size_bytes": 664,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "data/schemas/public_research_schema.json",
+      "sha256": "e77e1b945ad88d29272fa884a27d1d3103144220de60c6b3d74f99c9ca6418fa",
+      "size_bytes": 1306,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "data/research/public_outcome_dataset_manifest.json",
+      "sha256": "97a515257908f78ae55428f765ba819b23bd2b5aa821442c92973183bf15c598",
+      "size_bytes": 668,
+      "source_path": "data/research/public_outcome_dataset_manifest.json"
+    },
+    {
+      "generated": true,
+      "path": "data/research/public_outcome_dataset_sample.csv",
+      "sha256": "93929269e64dec8c177502757b68a468d6cc5d38dfbdd9f2d79386ece5d70f42",
+      "size_bytes": 245725,
+      "source_path": "data/research/public_outcome_dataset_sample.csv"
+    },
+    {
+      "generated": true,
+      "path": "data/demo/PUBLIC_SAMPLE_MANIFEST.json",
+      "sha256": "27f62505f51a2cf6ceefcc426ee97f0682cb11184231d0b056645481740075b1",
+      "size_bytes": 2049,
+      "source_path": ""
+    },
+    {
+      "generated": true,
+      "path": "PUBLIC_EXPORT_MANIFEST.json",
+      "sha256": "a7db4f015c60eada66f14b9e05f6fae632ae256f310158f70da8736907eafc27",
+      "size_bytes": 8161,
+      "source_path": ""
+    }
+  ],
+  "generated_bulk_included": "no",
+  "generated_file_count": 12,
+  "license": "Apache-2.0",
+  "mode": "public_repo_export",
+  "model_binaries_included": "no",
+  "no_bet_instruction": "yes",
+  "private_data_included": "no",
+  "public_repository_name": "sports-forecast-lab",
+  "public_safe_status_included": "yes",
+  "raw_screenshots_included": "no",
+  "research_only": "yes",
+  "root_status_md_included": "no",
+  "secrets_included": "no",
+  "source_git_sha": "d7873366f5aeaaf0eb3508d4a42883ab02a0d58d",
+  "validation_command": "python3 scripts/validate_public_repo_export.py --export-root <export-root>",
+  "validation_error_count": 0,
+  "validation_result": "pass",
+  "validation_warning_count": 0,
+  "validation_warning_disposition": "no validator warnings"
+}
