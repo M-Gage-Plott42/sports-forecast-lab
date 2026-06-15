@@ -35,6 +35,9 @@ BANNED_PATH_PARTS = {
     ".ruff_cache",
     "cache",
 }
+IGNORED_SCAN_PATH_PARTS = {
+    ".git",
+}
 BANNED_FILENAMES = {
     "STATUS.md",
     "ledger.sqlite",
@@ -197,6 +200,11 @@ def validate_path(root: Path, path: Path, errors: list[str], warnings: list[str]
             break
 
 
+def should_skip_scan(root: Path, path: Path) -> bool:
+    rel = rel_path(root, path)
+    return bool(set(Path(rel).parts) & IGNORED_SCAN_PATH_PARTS)
+
+
 def validate_tree(root: Path) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -208,6 +216,8 @@ def validate_tree(root: Path) -> tuple[list[str], list[str]]:
     validate_manifest(root, errors)
     for path in sorted(root.rglob("*")):
         if path.is_dir():
+            continue
+        if should_skip_scan(root, path):
             continue
         validate_path(root, path, errors, warnings)
     return errors, warnings
