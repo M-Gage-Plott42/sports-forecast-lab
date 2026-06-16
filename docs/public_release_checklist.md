@@ -10,11 +10,15 @@ promotion.
 
 ## Release State
 
-Status: public proof/package prep implemented in the private repo. The user has
-approved `sports-forecast-lab` as the public repo name and Apache-2.0 as the
-license. The local public-repo rehearsal has been reviewed with validators and
-local secret scanners. Public GitHub creation/push remains a separate explicit
-operator action, followed by remote GitHub security-settings review.
+Status: public proof/package prep implemented and published. The user approved
+`sports-forecast-lab` as the public repo name and Apache-2.0 as the license.
+The local public-repo rehearsal was reviewed with validators and local secret
+scanners, then published to
+`https://github.com/M-Gage-Plott42/sports-forecast-lab` on 2026-06-16.
+Post-publication verification passed at public commit
+`50e1c7e46fe8b35f43da8cc3f9b09ff397521837`. GitHub UI
+secret-scanning/push-protection review is parked as a manual follow-up because
+the user deferred that check.
 
 Current package contents:
 
@@ -88,9 +92,14 @@ Latest reviewed smoke on 2026-06-16:
 - file count: `29`;
 - errors: `0`;
 - warnings: `0`;
-- publication status: local public-repo rehearsal scanner-clean; public GitHub
-  creation/push requires the explicit operator command and remote security
-  review after creation.
+- publication status: public GitHub repo created, pushed, and locally
+  post-publication verified;
+- public repo URL: `https://github.com/M-Gage-Plott42/sports-forecast-lab`;
+- public commit: `50e1c7e46fe8b35f43da8cc3f9b09ff397521837`;
+- manifest source private HEAD:
+  `6ee56d479b0193b006e59dbec5bae1e6a5e63144`;
+- parked manual follow-up: GitHub UI secret scanning/push-protection settings
+  review where available.
 
 Secret-scan false-positive disposition:
 
@@ -103,16 +112,17 @@ Secret-scan false-positive disposition:
 
 ## Publication Decision Gate
 
-Before creating or updating a public GitHub repository, the user must explicitly
-approve:
+The first public GitHub publication is complete. Before future public updates,
+the user must explicitly approve:
 
 - final public GitHub visibility;
-- whether the current validated local rehearsal is approved for GitHub;
-- whether Codex should create and push the public GitHub repository.
+- whether the current validated export/rehearsal is approved for GitHub;
+- whether Codex should push the public GitHub repository.
 
-After public GitHub creation/push, verify:
+After any future public GitHub push, verify:
 
 - `git remote -v` shows the intended public `origin`;
 - the pushed repository contains the same manifest-listed tracked files;
 - GitHub secret scanning and push protection settings are reviewed in the
-  public repository settings where available.
+  public repository settings where available. The 2026-06-16 UI settings review
+  is intentionally parked until the user chooses to do it.

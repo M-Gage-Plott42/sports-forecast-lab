@@ -1,7 +1,7 @@
 {
   "allowlist_policy_version": "public_repo_export_v2",
   "copied_file_count": 16,
-  "created_at_utc": "2026-06-16T07:14:28.300977+00:00",
+  "created_at_utc": "2026-06-16T10:01:18.085197+00:00",
   "data_slates_included": "no",
   "excluded_classes": [
     "private_ledgers",
@@ -72,15 +72,15 @@
     {
       "generated": false,
       "path": "docs/public_release_checklist.md",
-      "sha256": "6b3541f5a26ed839fc1d124e0d0be41dd6f6ae1147845e17575cae3e2d8dc2de",
-      "size_bytes": 5171,
+      "sha256": "8fbe1d94e80cfc5ea5fac0a75aeb7bc0fbff75827b94063ef23fa2492c42e9b1",
+      "size_bytes": 5684,
       "source_path": "docs/public_release_checklist.md"
     },
     {
       "generated": false,
       "path": "docs/public_repo_export_spec.md",
-      "sha256": "64fbb25e597b7ba5305a33db5ef0341a0f2b4c003f1122d2f5f18b7d829dee03",
-      "size_bytes": 11627,
+      "sha256": "2218440ac1159d5d907b47fa93f5eba80b917855afec7b6e8688af40b5c24bd1",
+      "size_bytes": 12115,
       "source_path": "docs/public_repo_export_spec.md"
     },
     {
@@ -212,7 +212,7 @@
     {
       "generated": true,
       "path": "data/demo/PUBLIC_SAMPLE_MANIFEST.json",
-      "sha256": "be5ce14a8a12cb2126a33df8873a4df2dc15d0d839c3c43cf5552d3bf2f39c1d",
+      "sha256": "a272e91e61acf8bc679519841724c0d5c6f967f55c4a68b1dbcdf8ed293d9ef4",
       "size_bytes": 2049,
       "source_path": ""
     },
@@ -238,7 +238,7 @@
   "research_only": "yes",
   "root_status_md_included": "no",
   "secrets_included": "no",
-  "source_git_sha": "6ee56d479b0193b006e59dbec5bae1e6a5e63144",
+  "source_git_sha": "dfd93634ed843054deef6d7853de41b9f2d3aa29",
   "validation_command": "python3 scripts/validate_public_repo_export.py --export-root <export-root>",
   "validation_error_count": 0,
   "validation_result": "pass",

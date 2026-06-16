@@ -12,11 +12,13 @@ Public repository target: `sports-forecast-lab`.
 
 Approved license: Apache-2.0.
 
-Publication path: local public-repo rehearsal first; no public GitHub push until
-the exported repo is reviewed. The 2026-06-16 local rehearsal passed validators
-and local scanner review; the remaining publication step is the explicit
-operator-controlled public GitHub create/push and remote security-settings
-review.
+Publication path: local public-repo rehearsal first, then explicit public
+GitHub create/push after validator and scanner review. The first publication
+completed on 2026-06-16 at
+`https://github.com/M-Gage-Plott42/sports-forecast-lab`. Local/remote
+post-publication verification passed at public commit
+`50e1c7e46fe8b35f43da8cc3f9b09ff397521837`. GitHub UI
+secret-scanning/push-protection review remains a parked manual follow-up.
 
 ## Repository Relationship
 
@@ -238,13 +240,18 @@ Latest reviewed smoke on 2026-06-16:
 - file count: `29`;
 - errors: `0`;
 - warnings: `0`;
-- publication status: local public-repo rehearsal scanner-clean; public GitHub
-  create/push is a separate operator action, followed by remote security
-  settings review.
+- publication status: public GitHub repo created, pushed, and locally
+  post-publication verified;
+- public repo URL: `https://github.com/M-Gage-Plott42/sports-forecast-lab`;
+- public commit: `50e1c7e46fe8b35f43da8cc3f9b09ff397521837`;
+- manifest source private HEAD:
+  `6ee56d479b0193b006e59dbec5bae1e6a5e63144`;
+- parked manual follow-up: GitHub UI secret scanning/push-protection settings
+  review where available.
 
 ## Publication Gate
 
-Before any public repo creation or push:
+Before any future public repo update or push:
 
 1. Run the exporter into a disposable output directory.
 2. Run `python3 scripts/validate_public_repo_export.py --export-root <DIR>`.
@@ -256,3 +263,5 @@ Before any public repo creation or push:
 7. Do not add a local scanner baseline file directly inside the public checkout
    unless the private exporter is updated to generate it and the manifest is
    regenerated.
+8. Treat GitHub UI secret scanning/push-protection review as a manual parked
+   item until the user chooses to perform it.
