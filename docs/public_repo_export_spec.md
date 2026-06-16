@@ -13,7 +13,10 @@ Public repository target: `sports-forecast-lab`.
 Approved license: Apache-2.0.
 
 Publication path: local public-repo rehearsal first; no public GitHub push until
-the exported repo is reviewed.
+the exported repo is reviewed. The 2026-06-16 local rehearsal passed validators
+and local scanner review; the remaining publication step is the explicit
+operator-controlled public GitHub create/push and remote security-settings
+review.
 
 ## Repository Relationship
 
@@ -227,11 +230,17 @@ Latest reviewed smoke on 2026-06-16:
 - public export creator: pass;
 - public export validator: pass;
 - MLB adapter skeleton validator: pass;
+- Gitleaks git and directory scans: pass;
+- TruffleHog git and filesystem scans: pass using `--no-update`,
+  `--no-verification`, and `--fail`;
+- `detect-secrets`: pass after excluding only manifest integrity/provenance hash
+  fields: `sha256`, `full_dataset_sha256`, and `source_git_sha`;
 - file count: `29`;
 - errors: `0`;
 - warnings: `0`;
-- publication status: local public-repo rehearsal approved first; public GitHub
-  push still requires final review.
+- publication status: local public-repo rehearsal scanner-clean; public GitHub
+  create/push is a separate operator action, followed by remote security
+  settings review.
 
 ## Publication Gate
 
@@ -244,3 +253,6 @@ Before any public repo creation or push:
 5. Run a secret scan and rely on GitHub push protection where available.
 6. Confirm the public README/status do not reference private app records or local
    paths.
+7. Do not add a local scanner baseline file directly inside the public checkout
+   unless the private exporter is updated to generate it and the manifest is
+   regenerated.

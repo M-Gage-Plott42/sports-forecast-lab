@@ -11,9 +11,10 @@ promotion.
 ## Release State
 
 Status: public proof/package prep implemented in the private repo. The user has
-approved `sports-forecast-lab` as the public repo name, Apache-2.0 as the
-license, and a local public-repo rehearsal as the next publication step. Public
-GitHub publication remains blocked until the local repo is reviewed.
+approved `sports-forecast-lab` as the public repo name and Apache-2.0 as the
+license. The local public-repo rehearsal has been reviewed with validators and
+local secret scanners. Public GitHub creation/push remains a separate explicit
+operator action, followed by remote GitHub security-settings review.
 
 Current package contents:
 
@@ -61,6 +62,9 @@ Current package contents:
 7. Run secret scanning before public push.
    - Local validators are necessary but not sufficient; GitHub push protection
      and secret scanning remain operator gates where available.
+   - Do not commit `.secrets.baseline` into `sports-forecast-lab` unless the
+     private exporter is changed to generate it and regenerate
+     `PUBLIC_EXPORT_MANIFEST.json`; otherwise it breaks manifest/tree equality.
 
 ## Warning Disposition
 
@@ -76,11 +80,26 @@ Latest reviewed smoke on 2026-06-16:
 - public export creator: pass;
 - public export validator: pass;
 - MLB adapter skeleton validator: pass;
+- Gitleaks git and directory scans: pass;
+- TruffleHog git and filesystem scans: pass with `--no-update`,
+  `--no-verification`, and `--fail`;
+- `detect-secrets`: pass after excluding only manifest hash/provenance fields
+  `sha256`, `full_dataset_sha256`, and `source_git_sha`;
 - file count: `29`;
 - errors: `0`;
 - warnings: `0`;
-- publication status: local public-repo rehearsal approved; public GitHub push
-  pending review.
+- publication status: local public-repo rehearsal scanner-clean; public GitHub
+  creation/push requires the explicit operator command and remote security
+  review after creation.
+
+Secret-scan false-positive disposition:
+
+- `detect-secrets` raw scan flagged 35 `Hex High Entropy String` candidates in
+  manifest files.
+- The findings were all reviewed as manifest integrity/provenance hashes:
+  SHA-256 file hashes, `full_dataset_sha256`, and `source_git_sha`.
+- The accepted final check excludes only those manifest hash/provenance fields:
+  `detect-secrets scan --force-use-all-plugins --exclude-lines '"(sha256|full_dataset_sha256|source_git_sha)"\s*:'`.
 
 ## Publication Decision Gate
 
@@ -90,3 +109,10 @@ approve:
 - final public GitHub visibility;
 - whether the current validated local rehearsal is approved for GitHub;
 - whether Codex should create and push the public GitHub repository.
+
+After public GitHub creation/push, verify:
+
+- `git remote -v` shows the intended public `origin`;
+- the pushed repository contains the same manifest-listed tracked files;
+- GitHub secret scanning and push protection settings are reviewed in the
+  public repository settings where available.
