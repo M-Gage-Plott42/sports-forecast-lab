@@ -1,7 +1,7 @@
 {
   "allowlist_policy_version": "public_repo_export_v2",
   "copied_file_count": 16,
-  "created_at_utc": "2026-06-15T07:51:56.408154+00:00",
+  "created_at_utc": "2026-06-16T04:15:52.529155+00:00",
   "data_slates_included": "no",
   "excluded_classes": [
     "private_ledgers",
@@ -18,7 +18,7 @@
     "local_artifacts",
     "secrets"
   ],
-  "file_count": 28,
+  "file_count": 29,
   "files": [
     {
       "generated": false,
@@ -72,15 +72,15 @@
     {
       "generated": false,
       "path": "docs/public_release_checklist.md",
-      "sha256": "d391ae21c7b873cfe67f7bf5b65feef10188ce8ac4463dc2a90ebefb170aec9a",
-      "size_bytes": 3715,
+      "sha256": "77b6b34cfa97b9f38c7acd29e834a7dfb9bfb279ff3fa833cb046c4b78646bb6",
+      "size_bytes": 3740,
       "source_path": "docs/public_release_checklist.md"
     },
     {
       "generated": false,
       "path": "docs/public_repo_export_spec.md",
-      "sha256": "98699b0c408cd2ddccf637b751f53e1c649a721051c017b305af85429d4f64ec",
-      "size_bytes": 9470,
+      "sha256": "1f1e81d469df5a4f0381a7676cd4aa2eae8f3de269f0fddc5211eee17ed48a8e",
+      "size_bytes": 10904,
       "source_path": "docs/public_repo_export_spec.md"
     },
     {
@@ -121,8 +121,8 @@
     {
       "generated": false,
       "path": "scripts/validate_public_repo_export.py",
-      "sha256": "5a0bcea1eec7438ea2dde32f96cdf6274e2ad00b00987ad15400a0e5030b95d9",
-      "size_bytes": 8013,
+      "sha256": "5f3403d102ba67af4ca5f05501ae13679ce5e5a4dabbd8324c0ba5826f6396da",
+      "size_bytes": 12148,
       "source_path": "scripts/validate_public_repo_export.py"
     },
     {
@@ -169,6 +169,13 @@
     },
     {
       "generated": true,
+      "path": "AGENTS.md",
+      "sha256": "66897256770c28bc3679582641d4a1f79320378effee9ed76ddbbeb6ef802067",
+      "size_bytes": 2765,
+      "source_path": ""
+    },
+    {
+      "generated": true,
       "path": "LICENSE",
       "sha256": "b662d0506c9120f89a5656a07d264823aef7f4eeaa8d6351d041696394d40bdd",
       "size_bytes": 10263,
@@ -205,20 +212,21 @@
     {
       "generated": true,
       "path": "data/demo/PUBLIC_SAMPLE_MANIFEST.json",
-      "sha256": "1840583e86ba9c9e23af31ec99e30ce71e185031360a851928fddcbd71a05bdd",
+      "sha256": "172adc66519e87a27e0ba939b93cc90f780dd0cc658f5e4ccc9003ecaffab054",
       "size_bytes": 2049,
       "source_path": ""
     },
     {
       "generated": true,
+      "hash_note": "Self-referential manifest; validator verifies size and all non-manifest SHA-256 values.",
       "path": "PUBLIC_EXPORT_MANIFEST.json",
-      "sha256": "0884aedb03ad7a76f2a96cbe47c0d85d601acb1b4680cd651a2388d99df3de36",
-      "size_bytes": 8161,
+      "sha256": "self-referential",
+      "size_bytes": 8646,
       "source_path": ""
     }
   ],
   "generated_bulk_included": "no",
-  "generated_file_count": 12,
+  "generated_file_count": 13,
   "license": "Apache-2.0",
   "mode": "public_repo_export",
   "model_binaries_included": "no",
@@ -230,7 +238,7 @@
   "research_only": "yes",
   "root_status_md_included": "no",
   "secrets_included": "no",
-  "source_git_sha": "2f0ce7555439ede95058b6fe30616c1069c8d7f2",
+  "source_git_sha": "9023ef5d1f6f79d4c493c6fa585b3dd10581b7f1",
   "validation_command": "python3 scripts/validate_public_repo_export.py --export-root <export-root>",
   "validation_error_count": 0,
   "validation_result": "pass",

@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import subprocess
 from pathlib import Path
 
 
 TEXT_SUFFIXES = {".csv", ".json", ".md", ".py", ".sh", ".txt", ".yml", ".yaml", ".in"}
 TEXT_FILENAMES = {"LICENSE"}
+MANIFEST_PATH = "PUBLIC_EXPORT_MANIFEST.json"
+MANIFEST_SELF_SHA256 = "self-referential"
 BANNED_PREFIXES = {
     "data/ledgers/",
     "data/slates/",
@@ -69,6 +73,7 @@ BANNED_SUFFIXES = {
     ".db",
 }
 REQUIRED_FILES = {
+    "AGENTS.md",
     "README.md",
     "STATUS_PUBLIC.md",
     "RESEARCH_BOUNDARY.md",
@@ -124,8 +129,107 @@ def read_manifest(path: Path) -> dict[str, object]:
         raise SystemExit(f"ERROR: invalid PUBLIC_EXPORT_MANIFEST.json: {exc}") from exc
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def actual_export_files(root: Path) -> list[str]:
+    if (root / ".git").exists():
+        try:
+            output = subprocess.check_output(
+                ["git", "ls-files"],
+                cwd=root,
+                text=True,
+                stderr=subprocess.DEVNULL,
+            )
+        except (OSError, subprocess.CalledProcessError):
+            pass
+        else:
+            return sorted(line.strip() for line in output.splitlines() if line.strip())
+    files: list[str] = []
+    for path in root.rglob("*"):
+        if path.is_dir() or should_skip_scan(root, path):
+            continue
+        files.append(rel_path(root, path))
+    return sorted(files)
+
+
+def validate_manifest_file_set(root: Path, manifest: dict[str, object], errors: list[str]) -> None:
+    file_entries = manifest.get("files")
+    if not isinstance(file_entries, list) or not file_entries:
+        errors.append("PUBLIC_EXPORT_MANIFEST.json files must be a nonempty list")
+        return
+
+    actual_files = actual_export_files(root)
+    actual_file_set = set(actual_files)
+    if manifest.get("file_count") != len(actual_files):
+        errors.append(
+            "PUBLIC_EXPORT_MANIFEST.json file_count must match actual exported file count "
+            f"({len(actual_files)})"
+        )
+
+    manifest_paths: list[str] = []
+    copied_count = 0
+    generated_count = 0
+    for index, entry in enumerate(file_entries):
+        if not isinstance(entry, dict):
+            errors.append(f"PUBLIC_EXPORT_MANIFEST.json files[{index}] must be an object")
+            continue
+        path = entry.get("path")
+        if not isinstance(path, str) or not path:
+            errors.append(f"PUBLIC_EXPORT_MANIFEST.json files[{index}] missing path")
+            continue
+        manifest_paths.append(path)
+        generated = entry.get("generated")
+        if generated is True:
+            generated_count += 1
+        elif generated is False:
+            copied_count += 1
+        else:
+            errors.append(f"{path}: manifest generated must be true or false")
+            continue
+
+        target = root / path
+        if path not in actual_file_set:
+            errors.append(f"{path}: manifest entry missing from actual exported tree")
+            continue
+        actual_size = target.stat().st_size
+        if entry.get("size_bytes") != actual_size:
+            errors.append(f"{path}: manifest size_bytes must be {actual_size}")
+        if path == MANIFEST_PATH:
+            if entry.get("sha256") != MANIFEST_SELF_SHA256:
+                errors.append(f"{path}: manifest sha256 must be {MANIFEST_SELF_SHA256}")
+            if not entry.get("hash_note"):
+                errors.append(f"{path}: manifest self-entry must include hash_note")
+        else:
+            actual_sha = sha256_file(target)
+            if entry.get("sha256") != actual_sha:
+                errors.append(f"{path}: manifest sha256 must be {actual_sha}")
+
+    duplicate_paths = sorted({path for path in manifest_paths if manifest_paths.count(path) > 1})
+    for path in duplicate_paths:
+        errors.append(f"{path}: duplicate PUBLIC_EXPORT_MANIFEST.json file entry")
+
+    manifest_file_set = set(manifest_paths)
+    extra_manifest_paths = sorted(manifest_file_set - actual_file_set)
+    missing_manifest_paths = sorted(actual_file_set - manifest_file_set)
+    for path in extra_manifest_paths:
+        errors.append(f"{path}: manifest lists file not present in actual exported tree")
+    for path in missing_manifest_paths:
+        errors.append(f"{path}: tracked/exported file missing from PUBLIC_EXPORT_MANIFEST.json")
+
+    if manifest.get("copied_file_count") != copied_count:
+        errors.append(f"PUBLIC_EXPORT_MANIFEST.json copied_file_count must be {copied_count}")
+    if manifest.get("generated_file_count") != generated_count:
+        errors.append(f"PUBLIC_EXPORT_MANIFEST.json generated_file_count must be {generated_count}")
+
+
 def validate_manifest(root: Path, errors: list[str]) -> None:
-    manifest_path = root / "PUBLIC_EXPORT_MANIFEST.json"
+    manifest_path = root / MANIFEST_PATH
     if not manifest_path.exists():
         errors.append("missing PUBLIC_EXPORT_MANIFEST.json")
         return
@@ -151,9 +255,7 @@ def validate_manifest(root: Path, errors: list[str]) -> None:
     for key, expected in required_flags.items():
         if str(manifest.get(key, "")).strip().lower() != expected:
             errors.append(f"PUBLIC_EXPORT_MANIFEST.json {key} must be {expected}")
-    file_entries = manifest.get("files")
-    if not isinstance(file_entries, list) or not file_entries:
-        errors.append("PUBLIC_EXPORT_MANIFEST.json files must be a nonempty list")
+    validate_manifest_file_set(root, manifest, errors)
     if manifest.get("validation_result") not in {"pass", "not_run"}:
         errors.append("PUBLIC_EXPORT_MANIFEST.json validation_result must be pass or not_run")
     if "validation_warning_disposition" not in manifest:

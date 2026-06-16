@@ -1,6 +1,6 @@
 # Public Repo Export Spec
 
-Last updated: 2026-06-15.
+Last updated: 2026-06-16.
 
 Purpose: define an allowlist-only public export for a resume-facing sports
 prediction research framework. Do not sanitize this private repository in
@@ -14,6 +14,29 @@ Approved license: Apache-2.0.
 
 Publication path: local public-repo rehearsal first; no public GitHub push until
 the exported repo is reviewed.
+
+## Repository Relationship
+
+`betting-thread-ledger-private` remains the private source-of-truth repo for
+audited ledgers, manually transcribed app evidence, settlement tracking, exact
+private app lines, and gated offline research. The public `sports-forecast-lab`
+repo does not retire or replace this repo.
+
+The public repo is a portfolio-safe research framework export. It may contain
+public-data forecasting examples, validators, model cards, dataset cards,
+synthetic demos, and public-source sport adapter patterns. It must not contain
+or operate betting workflows, app-line decision flows, private ROI training,
+PrizePicks or sportsbook ticket construction, EV workflow, account interaction,
+or wager instructions.
+
+The allowed linkage is one-way:
+
+`betting-thread-ledger-private` -> allowlist exporter -> `sports-forecast-lab`
+
+Do not two-way sync the repositories, share private data, copy ignored model
+artifacts, expose raw screenshots, or couple the public repo to live operational
+workflows. Public additions should come from reviewed, sanitized export
+surfaces or independently public-safe source material.
 
 ## Public Export Goals
 
@@ -42,7 +65,7 @@ The first exporter may include only these classes:
 
 - Public-safe generated files created by the exporter:
   `README.md`, `STATUS_PUBLIC.md`, `RESEARCH_BOUNDARY.md`, `SECURITY.md`,
-  `CONTRIBUTING.md`, `LICENSE`,
+  `CONTRIBUTING.md`, `AGENTS.md`, `LICENSE`,
   `data/research/public_outcome_dataset_manifest.json`,
   `data/research/public_outcome_dataset_sample.csv`,
   `data/schemas/public_research_schema.json`,
@@ -140,6 +163,8 @@ The initial implementation should add:
   - validates manifest, required public surfaces, path denylist, suffix denylist,
     secret patterns, private transaction/dollar/app-settlement patterns, and local
     path leakage;
+  - validates manifest/tree equality, file counts, generated/copied counts,
+    per-file sizes, and SHA-256 values for every non-manifest file;
   - exits nonzero on any error.
 
 Implementation status: the exporter and validator are implemented. The
@@ -161,6 +186,8 @@ The package now includes:
 - Public README polish: what the framework does, why it is useful, quickstart,
   public-only data boundary, synthetic-demo boundary, limitations, and no
   financial-guidance/app-automation boundary.
+- Public contributor guide: `AGENTS.md` with repository structure, validation
+  commands, style conventions, testing expectations, and public-boundary rules.
 - `STATUS_PUBLIC.md` polish: current public dataset/sample state, no-promotion
   status, research-only scope, and reproducible smoke commands.
 - Public sample manifest: source-public rows, synthetic private-style rows,
@@ -195,12 +222,12 @@ Acceptance criteria for that patch:
    account, financial-calculation, live-recommendation, or model-training
    behavior.
 
-Latest reviewed smoke on 2026-06-15:
+Latest reviewed smoke on 2026-06-16:
 
 - public export creator: pass;
 - public export validator: pass;
 - MLB adapter skeleton validator: pass;
-- file count: `28`;
+- file count: `29`;
 - errors: `0`;
 - warnings: `0`;
 - publication status: local public-repo rehearsal approved first; public GitHub

@@ -1,6 +1,6 @@
 # Public Release Checklist
 
-Last updated: 2026-06-15.
+Last updated: 2026-06-16.
 
 Purpose: make the allowlist public export reviewable as a portfolio artifact
 before any public repository publication. This checklist is repo machinery only.
@@ -22,6 +22,7 @@ Current package contents:
 - generated `RESEARCH_BOUNDARY.md`;
 - generated `SECURITY.md`;
 - generated `CONTRIBUTING.md`;
+- generated `AGENTS.md`;
 - generated Apache-2.0 `LICENSE`;
 - `PUBLIC_EXPORT_MANIFEST.json`;
 - `data/demo/PUBLIC_SAMPLE_MANIFEST.json`;
@@ -70,12 +71,12 @@ private records, dollar rows, user/friend identifiers, local paths, raw
 screenshots, `data/slates/`, private ledgers, caches, or model binaries are
 included.
 
-Latest reviewed smoke on 2026-06-15:
+Latest reviewed smoke on 2026-06-16:
 
 - public export creator: pass;
 - public export validator: pass;
 - MLB adapter skeleton validator: pass;
-- file count: `28`;
+- file count: `29`;
 - errors: `0`;
 - warnings: `0`;
 - publication status: local public-repo rehearsal approved; public GitHub push
