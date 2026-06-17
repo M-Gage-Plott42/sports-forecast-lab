@@ -15,10 +15,10 @@ Status: public proof/package prep implemented and published. The user approved
 The local public-repo rehearsal was reviewed with validators and local secret
 scanners, then published to
 `https://github.com/M-Gage-Plott42/sports-forecast-lab` on 2026-06-16.
-Post-publication verification passed at public commit
-`50e1c7e46fe8b35f43da8cc3f9b09ff397521837`. GitHub UI
-secret-scanning/push-protection review is parked as a manual follow-up because
-the user deferred that check.
+Post-publication verification passed, and the follow-up 2026-06-16 read-only
+public clone/GitHub audit found the current public tree validator-clean and
+scanner-clean. GitHub UI secret-scanning/push-protection review is parked as a
+manual follow-up because the user deferred that check.
 
 Current package contents:
 
@@ -95,9 +95,9 @@ Latest reviewed smoke on 2026-06-16:
 - publication status: public GitHub repo created, pushed, and locally
   post-publication verified;
 - public repo URL: `https://github.com/M-Gage-Plott42/sports-forecast-lab`;
-- public commit: `50e1c7e46fe8b35f43da8cc3f9b09ff397521837`;
-- manifest source private HEAD:
-  `6ee56d479b0193b006e59dbec5bae1e6a5e63144`;
+- public commit: moving public `main`; use GitHub history for the current
+  published HEAD;
+- manifest source private HEAD: recorded in `PUBLIC_EXPORT_MANIFEST.json`;
 - parked manual follow-up: GitHub UI secret scanning/push-protection settings
   review where available.
 

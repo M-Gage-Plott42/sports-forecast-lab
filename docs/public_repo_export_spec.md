@@ -16,9 +16,10 @@ Publication path: local public-repo rehearsal first, then explicit public
 GitHub create/push after validator and scanner review. The first publication
 completed on 2026-06-16 at
 `https://github.com/M-Gage-Plott42/sports-forecast-lab`. Local/remote
-post-publication verification passed at public commit
-`50e1c7e46fe8b35f43da8cc3f9b09ff397521837`. GitHub UI
-secret-scanning/push-protection review remains a parked manual follow-up.
+post-publication verification passed, and the follow-up 2026-06-16 read-only
+public clone/GitHub audit found the current public tree validator-clean and
+scanner-clean. GitHub UI secret-scanning/push-protection review remains a
+parked manual follow-up.
 
 ## Repository Relationship
 
@@ -243,9 +244,9 @@ Latest reviewed smoke on 2026-06-16:
 - publication status: public GitHub repo created, pushed, and locally
   post-publication verified;
 - public repo URL: `https://github.com/M-Gage-Plott42/sports-forecast-lab`;
-- public commit: `50e1c7e46fe8b35f43da8cc3f9b09ff397521837`;
-- manifest source private HEAD:
-  `6ee56d479b0193b006e59dbec5bae1e6a5e63144`;
+- public commit: moving public `main`; use GitHub history for the current
+  published HEAD;
+- manifest source private HEAD: recorded in `PUBLIC_EXPORT_MANIFEST.json`;
 - parked manual follow-up: GitHub UI secret scanning/push-protection settings
   review where available.
 

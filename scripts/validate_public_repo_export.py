@@ -149,7 +149,9 @@ def actual_export_files(root: Path) -> list[str]:
         except (OSError, subprocess.CalledProcessError):
             pass
         else:
-            return sorted(line.strip() for line in output.splitlines() if line.strip())
+            tracked_files = sorted(line.strip() for line in output.splitlines() if line.strip())
+            if tracked_files:
+                return tracked_files
     files: list[str] = []
     for path in root.rglob("*"):
         if path.is_dir() or should_skip_scan(root, path):

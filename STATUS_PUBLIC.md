@@ -14,7 +14,8 @@
 - public_proof_package: included
 - mlb_adapter_skeleton: fixture_only
 - license: Apache-2.0
-- publication_status: local_rehearsal_first
+- publication_status: published_and_parked
+- github_security_ui_review: parked_manual_follow_up
 
 This export is a public framework/demo package. It is not the private operator
 status surface and must not be used for account activity, current-event
